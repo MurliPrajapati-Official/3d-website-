@@ -14,16 +14,24 @@ npm run build    # production build in dist/
 `public/frames/sm` for phones). The hero is 460vh tall with a sticky stage;
 scroll position picks the frame painted onto a `<canvas>`.
 
-To rebuild the frames (e.g. after swapping the video):
+To rebuild the frames (e.g. after swapping the video), with ffmpeg installed:
 
 ```bash
-pip install numpy opencv-python-headless
 npm run frames
 ```
 
-The script inpaints the camera grid that is burned into the source clip and
-paints the burned-in captions out of the section stills. The grid and caption
-coordinates in `scripts/` are specific to this clip.
+The film's 3x3 grid is part of its design (each tile is a slightly shifted
+view and the lines hide the joins), so it is kept. The script paints the
+burned-in captions out of the section stills; those caption coordinates are
+specific to this clip.
+
+## Deploy
+
+Hosted on Cloudflare Pages (project `daily-drama`):
+
+```bash
+npm run deploy
+```
 
 ## Where things live
 

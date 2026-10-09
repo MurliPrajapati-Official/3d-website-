@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "frames": "bash scripts/extract-frames.sh"
+    "frames": "bash scripts/extract-frames.sh",
+    "deploy": "vite build && wrangler pages deploy dist --project-name daily-drama --branch main"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.1.2",
-    "vite": "^8.3.4"
+    "vite": "^8.3.4",
+    "wrangler": "^4.149.0"
   }
 }
